@@ -1,0 +1,149 @@
+{
+  "name": "ORCHIS MX-7 · 16:9 landscape v3 (film_v2 rhythm + R8 model + grouped teardown), 0–12 s",
+  "note": "film_v3_merge: film_v2 animation/camera/sound baseline with the R8 model (web/mantis.js). The mid-body teardown is rebuilt as a grouped assembly explosion (shell opens -> components separate -> hold -> reassembly in build order, no random debris). The release shots follow the live blade-tip anchor (tip_forelegR) instead of the old hard-coded world point. Sound cues are byte-identical to film_v2's score.",
+  "product": { "name": "ORCHIS MX-7", "title": "Robotic Mantis, Taken Apart", "date": "2026-11-17", "brand": "ORCHIS" },
+  "duration": 12.0,
+  "fps": 60,
+  "size": [1920, 1080],
+  "preview": [1280, 720],
+  "blend": 0.6,
+
+  "camera": {
+    "note": "az: degrees from the hero view, + orbits toward the tail. d: multiple of the hero distance. target: mantis-local point, or a part name for a live anchor. screenY: where the target lands on the frame (0 = top). fov: vertical degrees. ease: curve of the move INTO this key. Stage azimuths: intro 0°, abdomen +110°, explode +200°, release 350° — every neighbour ≥60° apart.",
+    "heroAzWorld": 26,
+    "heroDist": 23.5,
+    "pullback": 0.06
+  },
+  "shots": {
+    "hero":           { "az": 0,   "el": 10, "d": 1.0,   "target": [0.55, 3.3, 0.0], "screenY": 0.55, "fov": 28, "ease": "inOut" },
+    "hero_orbit":     { "az": 10,  "el": 11, "d": 0.98,  "target": [0.55, 3.3, 0.0], "screenY": 0.55, "fov": 28, "ease": "linear" },
+    "abdomen":        { "az": 110, "el": 22, "d": 0.70,  "target": [2.2, 3.2, 0.0],  "screenY": 0.41, "fov": 28, "ease": "inOut" },
+    "abdomen_open":   { "az": 116, "el": 23, "d": 0.595, "target": [2.4, 3.25, 0.0], "screenY": 0.41, "fov": 28, "ease": "inOut" },
+    "abdomen_hold":   { "az": 121, "el": 24, "d": 0.565, "target": [2.4, 3.25, 0.0], "screenY": 0.41, "fov": 28, "ease": "inOut" },
+    "abdomen_close":  { "az": 124, "el": 24, "d": 0.58,  "target": [2.3, 3.2, 0.0],  "screenY": 0.41, "fov": 28, "ease": "inOut" },
+    "abdomen_settle": { "az": 127, "el": 24, "d": 0.575, "target": [2.3, 3.2, 0.0],  "screenY": 0.41, "fov": 28, "ease": "inOut" },
+    "explode_wide":   { "az": 200, "el": 15, "d": 1.5,   "target": [0.5, 3.5, 0.0],  "screenY": 0.5,  "fov": 28, "ease": "inOut" },
+    "explode_hold":   { "az": 212, "el": 16, "d": 1.52,  "target": [0.5, 3.5, 0.0],  "screenY": 0.5,  "fov": 28, "ease": "linear" },
+    "release_low":    { "az": 350, "el": 4,  "d": 1.0,   "target": [-1.6, 3.7, 0.0], "screenY": 0.5,  "fov": 28, "ease": "inOut" },
+    "release_ready":  { "az": 352, "el": 3,  "d": 0.72,  "target": [-2.8, 4.4, 0.6], "screenY": 0.5,  "fov": 28, "ease": "inOut" },
+    "release_strike": { "az": 354, "el": 2,  "d": 0.12,  "target": "tip_forelegR", "screenX": 0.66, "screenY": 0.4, "fov": 28, "ease": "inOut" },
+    "release_tip":    { "az": 355, "el": 1,  "d": 0.07,  "target": "tip_forelegR", "screenX": 0.72, "screenY": 0.36, "fov": 28, "ease": "out" }
+  },
+
+  "acts": [
+    { "act": "intro", "t": 0.0, "status": "Stalking in",
+      "camera": [ { "t": 0.0, "shot": "hero" }, { "t": 2.3, "shot": "hero_orbit" } ] },
+    { "act": "abdomen", "t": 2.3, "button": "abdomen", "status": "Abdomen", "open": [2.65, 3.55], "close": [4.3, 4.8],
+      "camera": [ { "t": 2.65, "shot": "abdomen" }, { "t": 3.55, "shot": "abdomen_open" }, { "t": 4.3, "shot": "abdomen_hold" }, { "t": 4.8, "shot": "abdomen_close" }, { "t": 5.0, "shot": "abdomen_settle" } ] },
+    { "act": "explode", "t": 5.0, "button": "teardown", "status": "Teardown",
+      "camera": [ { "t": 5.0, "shot": "explode_wide" }, { "t": 8.6, "shot": "explode_hold" } ] },
+    { "act": "release", "t": 8.6, "button": "release", "status": "Release",
+      "camera": [ { "t": 8.6, "shot": "release_low" }, { "t": 9.6, "shot": "release_ready" }, { "t": 11.0, "shot": "release_strike" }, { "t": 12.0, "shot": "release_tip" } ] }
+  ],
+
+  "motion": {
+    "walk": { "speed": 0.14, "stop": [2.0, 2.6], "stepHz": 0.9, "stepLift": 0.07, "stepSwing": 0.05 },
+    "forearmLift": 0.07,
+    "gearRate": { "body": 0.6, "abd": 3.0 }
+  },
+
+  "abdomen": {
+    "note": "open/close = [start, duration] in s from the act's open/close start; part j starts stagger × rank_j later. Ranks: wings L→R; belly front→back; panes top sector first, tail bay first; bands tail first; modules in build order.",
+    "wings":   { "n": 2,  "open": [0.00, 0.36], "stagger": 0.06, "close": [0.22, 0.24], "closeStagger": 0.0,  "closeOrder": "same" },
+    "belly":   { "n": 4,  "open": [0.00, 0.22], "stagger": 0.05, "close": [0.28, 0.18], "closeStagger": 0.0,  "closeOrder": "same" },
+    "panes":   { "n": 56, "open": [0.07, 0.32], "stagger": 0.05, "wave": 0.012, "close": [0.11, 0.20], "closeStagger": 0.02, "closeWave": 0.006, "closeOrder": "same" },
+    "tail":    { "n": 1,  "open": [0.32, 0.30], "close": [0.09, 0.18] },
+    "bands":   { "n": 7,  "open": [0.38, 0.26], "stagger": 0.05, "close": [0.04, 0.13], "closeStagger": 0.015, "closeOrder": "reverse" },
+    "modules": { "n": 6,  "open": [0.55, 0.26], "stagger": 0.05, "close": [0.00, 0.10], "closeStagger": 0.01, "closeOrder": "reverse" },
+    "glow":    { "open": [0.48, 0.42], "close": [0.00, 0.22], "pulseHz": 2.2, "pulse": 0.18, "bloom": [0.38, 0.55] }
+  },
+
+  "explode": {
+    "note": "Grouped assembly explosion. Stage 1 (shell opens, 5.15-6.15): abdomen cage panes bloom out along surface normals, band rings step along the body axis, belly plates drop, coil modules slide out on their radial axes, tail slides back along its axis, wings lift off their hinges. Stage 2 (components separate, 5.5-6.5): head assembly slides off the neck pin (along the neck axis), prothorax eases out of the torso socket, abdomen slides back along its body axis, forelegs slide out on their shoulder pins (±Z). The thorax with its four walking legs stays as the central skeleton reference. Hold 6.5-7.45 (slow-motion clock 6.4-7.0). Reassembly in build order: abdomen 7.55, neck 7.62, head 7.7, forelegs 7.8, wings 7.88, shell closes last 7.9-8.55. No random debris: every rivet/gear/screw rides inside its component group.",
+    "out": [5.5, 6.5],
+    "rejoin": [7.55, 8.55],
+    "hold": [6.5, 7.45],
+    "slow": [6.4, 7.0],
+    "slowRate": 0.22,
+    "spin": [5.2, 8.4],
+    "spinDeg": 330,
+    "shell":    { "wings": [5.15, 0.6], "panes": [5.2, 0.75], "belly": [5.3, 0.6], "bands": [5.35, 0.65], "tail": [5.45, 0.55], "modules": [5.5, 0.65] },
+    "shellBack": { "wings": 7.88, "panes": 7.9, "belly": 7.98, "bands": 7.95, "tail": 7.95, "modules": 8.0 },
+    "groups": {
+      "abdomen":   { "dir": [0.978, -0.206, 0], "dist": 2.3,  "out": 5.55, "dur": 0.85, "back": 7.55, "ret": 0.5 },
+      "prothorax": { "dir": [-0.84, 0.54, 0],   "dist": 0.55, "out": 5.68, "dur": 0.7,  "back": 7.62, "ret": 0.5 },
+      "head":      { "dir": [-0.84, 0.54, 0],   "dist": 1.8,  "out": 5.78, "dur": 0.7,  "back": 7.7,  "ret": 0.5 },
+      "forelegR":  { "dir": [0.15, 0.1, 1],     "dist": 2.2,  "out": 5.88, "dur": 0.62, "back": 7.8,  "ret": 0.52 },
+      "forelegL":  { "dir": [0.15, 0.1, -1],    "dist": 2.2,  "out": 5.88, "dur": 0.62, "back": 7.8,  "ret": 0.52 },
+      "wings":     { "dir": [0, 1, 0.12],       "dist": 1.25, "out": 5.5,  "dur": 0.7,  "back": 7.88, "ret": 0.52 }
+    }
+  },
+
+  "release": {
+    "raise": [8.6, 9.6],
+    "strike": [9.6, 11.0],
+    "fade": [11.25, 12.0]
+  },
+
+  "cursor": {
+    "start": [0.9, 0.1],
+    "clicks": [
+      { "t": 2.5,  "button": "abdomen",  "move": [2.0, 2.5] },
+      { "t": 5.1,  "button": "teardown", "move": [4.85, 5.1] },
+      { "t": 8.45, "button": "release",  "move": [8.2, 8.45] }
+    ]
+  },
+
+  "buttons": [
+    { "id": "head", "label": "Head" },
+    { "id": "scythe", "label": "Scythe" },
+    { "id": "abdomen", "label": "Abdomen" },
+    { "id": "teardown", "label": "Teardown" },
+    { "id": "release", "label": "Release" }
+  ],
+
+  "cards": [
+    { "id": "strike",  "title": "STRIKE",        "unit": "m/s", "widget": "wave" },
+    { "id": "spring",  "title": "SPRING PRELOAD", "unit": "N",  "widget": "progress" },
+    { "id": "coil",    "title": "COIL TEMP",      "unit": "°C", "widget": "segments" },
+    { "id": "battery", "title": "BATTERY",        "unit": "%",  "widget": "battery" }
+  ],
+
+  "labels": {
+    "abdomen": [
+      { "t": [2.95, 4.75], "title": "Glass cage",  "sub": "56 panes, radial",  "anchor": [3.1, 3.7, 1.15],  "at": [0.3, 0.28] },
+      { "t": [3.25, 4.75], "title": "Coil core",   "sub": "20 lit coils",      "anchor": [2.4, 3.2, 0.0],   "at": [0.72, 0.3] },
+      { "t": [3.45, 4.75], "title": "Tip",         "sub": "machined, chrome",  "anchor": [5.75, 2.05, 0.0], "at": [0.68, 0.72] }
+    ],
+    "explode": [
+      { "t": [5.9, 8.35],  "title": "Head unit",     "sub": "shield + optics",   "anchor": [-3.3, 6.35, 0.55], "track": "head",      "at": [0.24, 0.3] },
+      { "t": [5.95, 8.35], "title": "Neck stage",    "sub": "prothorax drive",   "anchor": [-1.95, 4.95, 0.5], "track": "prothorax", "at": [0.2, 0.62] },
+      { "t": [6.1, 8.35],  "title": "Abdomen shell", "sub": "56 glass panes",    "anchor": [3.3, 3.75, 1.1],   "track": "abdomen",   "at": [0.7, 0.24] },
+      { "t": [6.2, 8.35],  "title": "Raptor blades", "sub": "spring-loaded",     "anchor": [-4.1, 2.9, 1.6],   "track": "forelegR",  "at": [0.72, 0.68] }
+    ]
+  },
+
+  "ui": {
+    "statusOpen": "Abdomen open · {pct}% apart",
+    "statusExplode": "Teardown · {pct}% apart",
+    "statusRelease": "Release"
+  },
+
+  "sound": {
+    "note": "cues in seconds, synthesised by tools/makesfx.py; loudness -14 LUFS. Identical to film_v2 (verified against rounds/film_v1/score.wav and the film_v2 audio track).",
+    "ambience": [0.0, 1.2],
+    "tick": [1.0],
+    "clicks": [2.5, 5.1, 8.45],
+    "sweep": [2.35, 2.75],
+    "shell": [2.65, 4.8],
+    "coilHum": [2.9, 4.85],
+    "riser": [5.2, 6.4],
+    "impact": [6.4],
+    "debris": [6.4, 7.4],
+    "drone": [6.4, 7.05],
+    "reverse": [7.6, 8.3],
+    "riser2": [9.6, 11.0],
+    "strike": [11.0],
+    "fadeOut": [11.5, 12.0]
+  }
+}

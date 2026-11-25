@@ -1,0 +1,1645 @@
+{
+  "name": "ORCHIS MX-7 V9j",
+  "note": "v8: dead-air trimmed (intro 2.3->1.5 s) and the teardown rebuilt as a single flowing take on PCHIP splines (no per-key stops). FPV craft applied: establish -> impact hero -> orbit reveal -> proximity pass (the accent, 0.85 s, clearances ~1 u) -> pull-out, one committed 130-degree arc, monotone dive-then-rise. R9/R10 model. Sound re-synthesised to the new beats.",
+  "product": {
+    "name": "ORCHIS MX-7",
+    "title": "Robotic Mantis, Taken Apart",
+    "date": "2026-11-18",
+    "brand": "ORCHIS"
+  },
+  "duration": 17.55,
+  "fps": 60,
+  "size": [
+    1920,
+    1080
+  ],
+  "preview": [
+    1280,
+    720
+  ],
+  "blend": 0.85,
+  "camera": {
+    "note": "az: degrees from the hero view, + orbits toward the tail. d: multiple of the hero distance. target: mantis-local point, or a part name for a live anchor. screenY: where the target lands on the frame (0 = top). fov: vertical degrees. ease: curve of the move INTO this key. Stage azimuths: intro 0°, abdomen +110°, explode +200°, release 350° — every neighbour ≥60° apart.",
+    "heroAzWorld": 26,
+    "heroDist": 23.5,
+    "pullback": 0.06,
+    "dollyUnits": 0.75
+  },
+  "shots": {
+    "hero": {
+      "az": 0,
+      "el": 10,
+      "d": 1.0,
+      "target": [
+        0.55,
+        3.3,
+        0.0
+      ],
+      "screenY": 0.55,
+      "fov": 28,
+      "ease": "inOut"
+    },
+    "hero_orbit": {
+      "az": 10,
+      "el": 11,
+      "d": 0.98,
+      "target": [
+        0.55,
+        3.3,
+        0.0
+      ],
+      "screenY": 0.55,
+      "fov": 28,
+      "ease": "linear"
+    },
+    "abdomen": {
+      "az": 110,
+      "el": 22,
+      "d": 0.7,
+      "target": [
+        2.2,
+        3.2,
+        0.0
+      ],
+      "screenY": 0.41,
+      "fov": 28,
+      "ease": "inOut"
+    },
+    "abdomen_open": {
+      "az": 116,
+      "el": 23,
+      "d": 0.595,
+      "target": [
+        2.4,
+        3.25,
+        0.0
+      ],
+      "screenY": 0.41,
+      "fov": 28,
+      "ease": "inOut"
+    },
+    "abdomen_hold": {
+      "az": 121,
+      "el": 24,
+      "d": 0.565,
+      "target": [
+        2.4,
+        3.25,
+        0.0
+      ],
+      "screenY": 0.41,
+      "fov": 28,
+      "ease": "inOut"
+    },
+    "abdomen_close": {
+      "az": 124,
+      "el": 24,
+      "d": 0.58,
+      "target": [
+        2.3,
+        3.2,
+        0.0
+      ],
+      "screenY": 0.41,
+      "fov": 28,
+      "ease": "inOut"
+    },
+    "abdomen_settle": {
+      "az": 127,
+      "el": 24,
+      "d": 0.575,
+      "target": [
+        2.3,
+        3.2,
+        0.0
+      ],
+      "screenY": 0.41,
+      "fov": 28,
+      "ease": "inOut"
+    },
+    "explode_wide": {
+      "az": 200,
+      "el": 15,
+      "d": 1.5,
+      "target": [
+        0.5,
+        3.5,
+        0.0
+      ],
+      "screenY": 0.5,
+      "fov": 28,
+      "ease": "inOut"
+    },
+    "explode_hold": {
+      "az": 212,
+      "el": 16,
+      "d": 1.52,
+      "target": [
+        0.5,
+        3.5,
+        0.0
+      ],
+      "screenY": 0.5,
+      "fov": 28,
+      "ease": "linear"
+    },
+    "release_low": {
+      "az": 325,
+      "el": 7,
+      "d": 1.04,
+      "target": [
+        -1.5,
+        4.3,
+        0.0
+      ],
+      "screenY": 0.5,
+      "fov": 28,
+      "ease": "inOut"
+    },
+    "release_ready": {
+      "az": 337,
+      "el": 4,
+      "d": 0.79,
+      "target": [
+        -2.65,
+        5.3,
+        0.6
+      ],
+      "screenY": 0.5,
+      "fov": 28,
+      "ease": "inOut"
+    },
+    "release_strike": {
+      "az": 355,
+      "el": 2,
+      "d": 0.28,
+      "target": "tip_forelegR",
+      "screenX": 0.66,
+      "screenY": 0.4,
+      "fov": 28,
+      "ease": "inOut"
+    },
+    "release_tip": {
+      "az": 367,
+      "el": -2,
+      "d": 0.17,
+      "target": "tip_forelegR",
+      "screenX": 0.72,
+      "screenY": 0.36,
+      "fov": 28,
+      "ease": "out"
+    },
+    "td_wide": {
+      "az": 145,
+      "el": 15.0,
+      "d": 0.83,
+      "target": [
+        1.6,
+        3.45,
+        0.16
+      ],
+      "screenY": 0.5,
+      "fov": 31,
+      "ease": "flow"
+    },
+    "td_in": {
+      "az": 157,
+      "el": 11.5,
+      "d": 0.8,
+      "target": [
+        1.4,
+        3.5,
+        0.2
+      ],
+      "screenY": 0.5,
+      "fov": 31,
+      "ease": "flow"
+    },
+    "td_gap": {
+      "az": 219,
+      "el": 8,
+      "d": 0.85,
+      "target": [
+        0.5,
+        3.5,
+        0
+      ],
+      "screenY": 0.5,
+      "fov": 30,
+      "ease": "inOut"
+    },
+    "td_deep": {
+      "az": 225,
+      "el": 5,
+      "d": 0.5,
+      "target": [
+        0.5,
+        3.5,
+        0
+      ],
+      "screenY": 0.5,
+      "fov": 34,
+      "ease": "inOut"
+    },
+    "td_low1": {
+      "az": 238,
+      "el": 2.5,
+      "d": 0.56,
+      "target": [
+        0.5,
+        3.5,
+        0
+      ],
+      "screenY": 0.5,
+      "fov": 32,
+      "ease": "linear"
+    },
+    "td_thru_a": {
+      "az": 246,
+      "el": 1.0,
+      "d": 0.45,
+      "target": [
+        -0.2,
+        4.32,
+        0.12
+      ],
+      "screenY": 0.5,
+      "fov": 35.5,
+      "ease": "flow"
+    },
+    "td_thru_b": {
+      "az": 265,
+      "el": -1.0,
+      "d": 0.43,
+      "target": [
+        0.35,
+        4.25,
+        0
+      ],
+      "screenY": 0.5,
+      "fov": 35.5,
+      "ease": "flow"
+    },
+    "td_thru_c": {
+      "az": 283,
+      "el": -2.0,
+      "d": 0.5,
+      "target": [
+        1,
+        4.05,
+        -0.16
+      ],
+      "screenY": 0.5,
+      "fov": 34,
+      "ease": "flow"
+    },
+    "td_out": {
+      "az": 302,
+      "el": 4.0,
+      "d": 0.72,
+      "target": [
+        1.1,
+        3.8,
+        -0.12
+      ],
+      "screenY": 0.5,
+      "fov": 31,
+      "ease": "flow"
+    },
+    "td_hold": {
+      "az": 320,
+      "el": 12.0,
+      "d": 0.96,
+      "target": [
+        0.65,
+        3.55,
+        0
+      ],
+      "screenY": 0.5,
+      "fov": 29,
+      "ease": "flow"
+    },
+    "hero_push": {
+      "az": 24,
+      "el": 12.5,
+      "d": 0.86,
+      "target": [
+        0.55,
+        3.3,
+        0.0
+      ],
+      "screenY": 0.55,
+      "fov": 28,
+      "ease": "inOut"
+    },
+    "td_arc1": {
+      "az": 172,
+      "el": 8.0,
+      "d": 0.735,
+      "target": [
+        1.1,
+        3.6,
+        0.22
+      ],
+      "screenY": 0.5,
+      "fov": 32,
+      "ease": "flow"
+    },
+    "td_impact": {
+      "az": 189,
+      "el": 5.5,
+      "d": 0.65,
+      "target": [
+        0.65,
+        3.75,
+        0.22
+      ],
+      "screenY": 0.5,
+      "fov": 33,
+      "ease": "flow"
+    },
+    "td_arc2": {
+      "az": 207,
+      "el": 4.0,
+      "d": 0.57,
+      "target": [
+        0.15,
+        3.95,
+        0.2
+      ],
+      "screenY": 0.5,
+      "fov": 34,
+      "ease": "flow"
+    },
+    "td_arc3": {
+      "az": 226,
+      "el": 2.5,
+      "d": 0.5,
+      "target": [
+        -0.25,
+        4.18,
+        0.18
+      ],
+      "screenY": 0.5,
+      "fov": 35,
+      "ease": "flow"
+    }
+  },
+  "acts": [
+    {
+      "act": "intro",
+      "t": 4.5,
+      "status": "Stalking in",
+      "flow": true,
+      "camera": [
+        {
+          "t": 4.5,
+          "shot": "hero"
+        },
+        {
+          "t": 6.0,
+          "shot": "hero_push"
+        }
+      ]
+    },
+    {
+      "act": "abdomen",
+      "t": 6.0,
+      "button": "abdomen",
+      "status": "Abdomen",
+      "open": [
+        6.35,
+        7.25
+      ],
+      "close": [
+        7.95,
+        8.45
+      ],
+      "camera": [
+        {
+          "t": 6.35,
+          "shot": "abdomen"
+        },
+        {
+          "t": 7.25,
+          "shot": "abdomen_open"
+        },
+        {
+          "t": 7.95,
+          "shot": "abdomen_hold"
+        },
+        {
+          "t": 8.45,
+          "shot": "abdomen_close"
+        },
+        {
+          "t": 8.6,
+          "shot": "abdomen_settle"
+        }
+      ]
+    },
+    {
+      "act": "explode",
+      "t": 8.6,
+      "button": "teardown",
+      "status": "Teardown",
+      "flow": true,
+      "camera": [
+        {
+          "t": 8.6,
+          "shot": "td_wide"
+        },
+        {
+          "t": 9.08,
+          "shot": "td_in"
+        },
+        {
+          "t": 9.52,
+          "shot": "td_arc1"
+        },
+        {
+          "t": 9.95,
+          "shot": "td_impact"
+        },
+        {
+          "t": 10.37,
+          "shot": "td_arc2"
+        },
+        {
+          "t": 10.75,
+          "shot": "td_arc3"
+        },
+        {
+          "t": 11.13,
+          "shot": "td_thru_a"
+        },
+        {
+          "t": 11.52,
+          "shot": "td_thru_b"
+        },
+        {
+          "t": 11.91,
+          "shot": "td_thru_c"
+        },
+        {
+          "t": 12.42,
+          "shot": "td_out"
+        },
+        {
+          "t": 12.9,
+          "shot": "td_hold"
+        }
+      ]
+    },
+    {
+      "act": "release",
+      "t": 12.9,
+      "button": "release",
+      "status": "Release",
+      "camera": [
+        {
+          "t": 12.9,
+          "shot": "release_low"
+        },
+        {
+          "t": 13.95,
+          "shot": "release_ready"
+        },
+        {
+          "t": 15.5,
+          "shot": "release_strike"
+        },
+        {
+          "t": 16.5,
+          "shot": "release_tip"
+        }
+      ],
+      "flow": true
+    }
+  ],
+  "motion": {
+    "walk": {
+      "speed": 0.14,
+      "stop": [
+        5.6,
+        6.2
+      ],
+      "stepHz": 0.9,
+      "stepLift": 0.07,
+      "stepSwing": 0.05
+    },
+    "forearmLift": 0.07,
+    "gearRate": {
+      "body": 0.6,
+      "abd": 3.0
+    }
+  },
+  "abdomen": {
+    "note": "open/close = [start, duration] in s from the act's open/close start; part j starts stagger × rank_j later. Ranks: wings L→R; belly front→back; panes top sector first, tail bay first; bands tail first; modules in build order.",
+    "wings": {
+      "n": 2,
+      "open": [
+        0.0,
+        0.36
+      ],
+      "stagger": 0.06,
+      "close": [
+        0.22,
+        0.24
+      ],
+      "closeStagger": 0.0,
+      "closeOrder": "same"
+    },
+    "belly": {
+      "n": 4,
+      "open": [
+        0.0,
+        0.22
+      ],
+      "stagger": 0.05,
+      "close": [
+        0.28,
+        0.18
+      ],
+      "closeStagger": 0.0,
+      "closeOrder": "same"
+    },
+    "panes": {
+      "n": 56,
+      "open": [
+        0.07,
+        0.32
+      ],
+      "stagger": 0.05,
+      "wave": 0.012,
+      "close": [
+        0.11,
+        0.2
+      ],
+      "closeStagger": 0.02,
+      "closeWave": 0.006,
+      "closeOrder": "same"
+    },
+    "tail": {
+      "n": 1,
+      "open": [
+        0.32,
+        0.3
+      ],
+      "close": [
+        0.09,
+        0.18
+      ]
+    },
+    "bands": {
+      "n": 7,
+      "open": [
+        0.38,
+        0.26
+      ],
+      "stagger": 0.05,
+      "close": [
+        0.04,
+        0.13
+      ],
+      "closeStagger": 0.015,
+      "closeOrder": "reverse"
+    },
+    "modules": {
+      "n": 6,
+      "open": [
+        0.55,
+        0.26
+      ],
+      "stagger": 0.05,
+      "close": [
+        0.0,
+        0.1
+      ],
+      "closeStagger": 0.01,
+      "closeOrder": "reverse"
+    },
+    "glow": {
+      "open": [
+        0.48,
+        0.42
+      ],
+      "close": [
+        0.0,
+        0.22
+      ],
+      "pulseHz": 2.2,
+      "pulse": 0.18,
+      "bloom": [
+        0.38,
+        0.55
+      ]
+    }
+  },
+  "explode": {
+    "note": "One-take teardown v8. Staged expansion completes by 5.75 (main); impact 5.45 (pulse + slow-mo); hold 5.75-7.35 widens to 1.6 s for the showcase: orbit reveal 5.90-6.20 then the proximity pass 6.45-7.30 (the FPV accent, once). Reassembly 7.45-8.40; everything seated by 8.36; exact zero at 8.40. Pure translation, only gears spin.",
+    "out": [
+      9.05,
+      10.05
+    ],
+    "rejoin": [
+      11.95,
+      12.9
+    ],
+    "hold": [
+      10.25,
+      11.85
+    ],
+    "slow": [
+      9.95,
+      10.55
+    ],
+    "slowRate": 0.22,
+    "spin": [
+      8.75,
+      10.95
+    ],
+    "spinDeg": 330,
+    "scan": [
+      4.25,
+      0.5
+    ],
+    "shell": {
+      "wings": [
+        8.8,
+        0.6
+      ],
+      "panes": [
+        8.85,
+        0.8
+      ],
+      "belly": [
+        8.95,
+        0.6
+      ]
+    },
+    "shellBack": {
+      "wings": 12.25,
+      "panes": 12.05,
+      "belly": 12.3
+    },
+    "groups": {
+      "abdomen": {
+        "dir": [
+          0.978,
+          -0.206,
+          0
+        ],
+        "dist": 2.3,
+        "out": 9.05,
+        "dur": 0.85,
+        "back": 11.95,
+        "ret": 0.5
+      },
+      "prothorax": {
+        "dir": [
+          -0.84,
+          0.54,
+          0
+        ],
+        "dist": 0.55,
+        "out": 9.2,
+        "dur": 0.7,
+        "back": 12.02,
+        "ret": 0.5
+      },
+      "head": {
+        "dir": [
+          -0.84,
+          0.54,
+          0
+        ],
+        "dist": 0.5,
+        "out": 9.3,
+        "dur": 0.7,
+        "back": 12.1,
+        "ret": 0.5
+      },
+      "forelegR": {
+        "dir": [
+          0.15,
+          0.1,
+          1
+        ],
+        "dist": 2.2,
+        "out": 9.4,
+        "dur": 0.62,
+        "back": 12.2,
+        "ret": 0.52
+      },
+      "forelegL": {
+        "dir": [
+          0.15,
+          0.1,
+          -1
+        ],
+        "dist": 2.2,
+        "out": 9.4,
+        "dur": 0.62,
+        "back": 12.2,
+        "ret": 0.52
+      },
+      "wings": {
+        "dir": [
+          0,
+          1,
+          0.12
+        ],
+        "dist": 1.25,
+        "out": 9.0,
+        "dur": 0.7,
+        "back": 12.25,
+        "ret": 0.52
+      }
+    },
+    "trains": {
+      "bands": {
+        "out": 9.22,
+        "dur": 0.72,
+        "back": 12.0,
+        "ret": 0.5,
+        "stagger": 0.05,
+        "amp": {
+          "bandStep": 0.26
+        }
+      },
+      "modules": {
+        "out": 9.28,
+        "dur": 0.68,
+        "back": 12.02,
+        "ret": 0.48,
+        "stagger": 0.06,
+        "amp": {
+          "moduleOut": 0.34
+        }
+      },
+      "tail": {
+        "out": 9.32,
+        "dur": 0.65,
+        "back": 12.05,
+        "ret": 0.48,
+        "stagger": 0.07
+      },
+      "eyes": {
+        "out": 9.28,
+        "dur": 0.6,
+        "back": 12.0,
+        "ret": 0.46,
+        "stagger": 0.08
+      },
+      "thoraxShells": {
+        "out": 9.3,
+        "dur": 0.68,
+        "back": 11.88,
+        "ret": 0.48,
+        "stagger": 0.05
+      },
+      "gears": {
+        "out": 9.35,
+        "dur": 0.65,
+        "back": 11.95,
+        "ret": 0.48,
+        "stagger": 0.05
+      },
+      "femurShells": {
+        "out": 9.28,
+        "dur": 0.62,
+        "back": 11.98,
+        "ret": 0.46,
+        "stagger": 0.05
+      },
+      "caps": {
+        "out": 9.38,
+        "dur": 0.58,
+        "back": 11.8,
+        "ret": 0.44,
+        "stagger": 0.045
+      },
+      "dust": {
+        "out": 9.5,
+        "dur": 0.68,
+        "back": 11.9,
+        "ret": 0.44,
+        "stagger": 0.012
+      },
+      "thoraxPlate": {
+        "out": 9.24,
+        "dur": 0.68,
+        "back": 11.92,
+        "ret": 0.48,
+        "stagger": 0.06
+      },
+      "thoraxVentral": {
+        "out": 9.28,
+        "dur": 0.64,
+        "back": 11.94,
+        "ret": 0.48,
+        "stagger": 0.05
+      },
+      "thoraxTrackA": {
+        "out": 9.32,
+        "dur": 0.64,
+        "back": 11.92,
+        "ret": 0.48,
+        "stagger": 0.05
+      },
+      "thoraxTrackB": {
+        "out": 9.36,
+        "dur": 0.62,
+        "back": 11.94,
+        "ret": 0.48,
+        "stagger": 0.05
+      },
+      "thoraxDrum": {
+        "out": 9.36,
+        "dur": 0.6,
+        "back": 11.96,
+        "ret": 0.46,
+        "stagger": 0.05
+      },
+      "thoraxAct": {
+        "out": 9.4,
+        "dur": 0.6,
+        "back": 11.98,
+        "ret": 0.46,
+        "stagger": 0.05
+      },
+      "neckPlate": {
+        "out": 9.26,
+        "dur": 0.66,
+        "back": 11.94,
+        "ret": 0.48,
+        "stagger": 0.06
+      },
+      "neckGlass": {
+        "out": 9.38,
+        "dur": 0.6,
+        "back": 11.98,
+        "ret": 0.46,
+        "stagger": 0.05
+      },
+      "neckAct": {
+        "out": 9.42,
+        "dur": 0.58,
+        "back": 12.0,
+        "ret": 0.44,
+        "stagger": 0.05
+      },
+      "headShield": {
+        "out": 9.28,
+        "dur": 0.62,
+        "back": 11.98,
+        "ret": 0.46,
+        "stagger": 0.05
+      },
+      "headPanel": {
+        "out": 9.32,
+        "dur": 0.6,
+        "back": 12.0,
+        "ret": 0.46,
+        "stagger": 0.05
+      },
+      "headRing": {
+        "out": 9.34,
+        "dur": 0.62,
+        "back": 12.02,
+        "ret": 0.48,
+        "stagger": 0.06
+      },
+      "headCheek": {
+        "out": 9.36,
+        "dur": 0.6,
+        "back": 12.02,
+        "ret": 0.46,
+        "stagger": 0.05
+      },
+      "headJaw": {
+        "out": 9.4,
+        "dur": 0.58,
+        "back": 12.04,
+        "ret": 0.44,
+        "stagger": 0.05
+      },
+      "springOut": {
+        "out": 9.34,
+        "dur": 0.66,
+        "back": 12.04,
+        "ret": 0.5,
+        "stagger": 0.06
+      },
+      "abdCollar": {
+        "out": 9.28,
+        "dur": 0.62,
+        "back": 12.02,
+        "ret": 0.48,
+        "stagger": 0.06
+      },
+      "wingPin": {
+        "out": 9.44,
+        "dur": 0.56,
+        "back": 12.06,
+        "ret": 0.44,
+        "stagger": 0.045
+      }
+    }
+  },
+  "release": {
+    "raise": [
+      13.05,
+      14.06
+    ],
+    "strike": [
+      14.06,
+      14.62
+    ],
+    "fade": [
+      16.85,
+      17.55
+    ]
+  },
+  "cursor": {
+    "start": [
+      0.9,
+      0.1
+    ],
+    "clicks": [
+      {
+        "t": 6.2,
+        "button": "abdomen",
+        "move": [
+          5.8,
+          6.2
+        ]
+      },
+      {
+        "t": 8.75,
+        "button": "teardown",
+        "move": [
+          8.5,
+          8.75
+        ]
+      },
+      {
+        "t": 12.7,
+        "button": "release",
+        "move": [
+          12.45,
+          12.7
+        ]
+      }
+    ]
+  },
+  "buttons": [
+    {
+      "id": "head",
+      "label": "Head"
+    },
+    {
+      "id": "scythe",
+      "label": "Scythe"
+    },
+    {
+      "id": "abdomen",
+      "label": "Abdomen"
+    },
+    {
+      "id": "teardown",
+      "label": "Teardown"
+    },
+    {
+      "id": "release",
+      "label": "Release"
+    }
+  ],
+  "cards": [
+    {
+      "id": "strike",
+      "title": "STRIKE",
+      "unit": "m/s",
+      "widget": "wave"
+    },
+    {
+      "id": "spring",
+      "title": "SPRING PRELOAD",
+      "unit": "N",
+      "widget": "progress"
+    },
+    {
+      "id": "coil",
+      "title": "COIL TEMP",
+      "unit": "°C",
+      "widget": "segments"
+    },
+    {
+      "id": "battery",
+      "title": "BATTERY",
+      "unit": "%",
+      "widget": "battery"
+    }
+  ],
+  "labels": {
+    "abdomen": [
+      {
+        "t": [
+          6.65,
+          8.45
+        ],
+        "title": "Glass cage",
+        "sub": "56 panes, radial",
+        "anchor": [
+          3.1,
+          3.7,
+          1.15
+        ],
+        "at": [
+          0.3,
+          0.28
+        ]
+      },
+      {
+        "t": [
+          6.95,
+          8.45
+        ],
+        "title": "Coil core",
+        "sub": "20 lit coils",
+        "anchor": [
+          2.4,
+          3.2,
+          0.0
+        ],
+        "at": [
+          0.72,
+          0.3
+        ]
+      },
+      {
+        "t": [
+          7.15,
+          8.45
+        ],
+        "title": "Tip",
+        "sub": "machined, chrome",
+        "anchor": [
+          5.75,
+          2.05,
+          0.0
+        ],
+        "at": [
+          0.68,
+          0.72
+        ]
+      }
+    ],
+    "explode": [
+      {
+        "t": [
+          10.2,
+          12.5
+        ],
+        "title": "Optic head",
+        "sub": "2 × lens",
+        "anchor": [
+          -2.75,
+          7.4,
+          0.6
+        ],
+        "track": "head",
+        "at": [
+          0.24,
+          0.3
+        ]
+      },
+      {
+        "t": [
+          10.25,
+          12.5
+        ],
+        "title": "Band stack",
+        "sub": "7 rings stepped",
+        "anchor": [
+          3.2,
+          3.6,
+          1.3
+        ],
+        "track": "abdomen",
+        "at": [
+          0.72,
+          0.26
+        ]
+      },
+      {
+        "t": [
+          10.35,
+          12.5
+        ],
+        "title": "Drive gears",
+        "sub": "spinning free",
+        "anchor": [
+          0.3,
+          4.15,
+          0.95
+        ],
+        "at": [
+          0.2,
+          0.62
+        ]
+      },
+      {
+        "t": [
+          10.45,
+          12.5
+        ],
+        "title": "Tail stack",
+        "sub": "5 segments",
+        "anchor": [
+          5.7,
+          2.2,
+          0.3
+        ],
+        "track": "abdomen",
+        "at": [
+          0.72,
+          0.7
+        ]
+      }
+    ]
+  },
+  "ui": {
+    "statusOpen": "Abdomen open · {pct}% apart",
+    "statusExplode": "Teardown · {pct}% apart",
+    "statusRelease": "Release"
+  },
+  "sound": {
+    "note": "cues re-synthesised by tools/makesfx.py to the v8 beat sheet (impact = slow[0]); loudness -14 LUFS",
+    "ambience": [
+      4.5,
+      5.4
+    ],
+    "tick": [
+      4.65
+    ],
+    "clicks": [
+      6.2,
+      8.75,
+      12.7
+    ],
+    "sweep": [
+      6.05,
+      6.45
+    ],
+    "shell": [
+      6.35,
+      8.45
+    ],
+    "coilHum": [
+      6.6,
+      8.5
+    ],
+    "riser": [
+      8.8,
+      9.95
+    ],
+    "impact": [
+      9.95
+    ],
+    "debris": [
+      9.95,
+      11.05
+    ],
+    "drone": [
+      9.95,
+      10.6
+    ],
+    "reverse": [
+      11.95,
+      12.75
+    ],
+    "riser2": [
+      13.25,
+      14.62
+    ],
+    "strike": [
+      14.62
+    ],
+    "fadeOut": [
+      17.05,
+      17.55
+    ],
+    "brush": [
+      [
+        1.75,
+        2.18
+      ],
+      [
+        2.46,
+        2.88
+      ]
+    ],
+    "probeSnap": [
+      5.05,
+      8.45
+    ]
+  },
+  "showcase": {
+    "ui": [
+      3.55,
+      4.35
+    ]
+  },
+  "views": [
+    [
+      0,
+      "optic",
+      -18,
+      13,
+      5.35,
+      [
+        -3.02,
+        7.32,
+        0.43
+      ],
+      11,
+      0.42
+    ],
+    [
+      0.92,
+      "groom",
+      -6,
+      5,
+      13.35,
+      [
+        -3.6,
+        4.9,
+        0.72
+      ],
+      -12,
+      0.66
+    ],
+    [
+      3.52,
+      "stance",
+      -33,
+      -2,
+      22.6,
+      [
+        -0.15,
+        4.05,
+        0
+      ],
+      12,
+      0.92
+    ],
+    [
+      6,
+      "abdomen",
+      80,
+      24,
+      16.2,
+      [
+        3.1,
+        3.34,
+        0.32
+      ],
+      11,
+      0.78
+    ],
+    [
+      8.6,
+      "teardown",
+      0,
+      0,
+      0,
+      [],
+      0,
+      0
+    ],
+    [
+      12.9,
+      "release",
+      0,
+      0,
+      0,
+      [],
+      0,
+      0
+    ]
+  ],
+  "life": {
+    "period": 20,
+    "grooms": [
+      [
+        0.76,
+        1
+      ],
+      [
+        10.76,
+        -1
+      ]
+    ],
+    "snaps": [
+      [
+        4.65,
+        -1
+      ],
+      [
+        8.05,
+        1
+      ],
+      [
+        13.55,
+        -1
+      ],
+      [
+        17.8,
+        1
+      ]
+    ],
+    "groomKeys": [
+      [
+        0,
+        0
+      ],
+      [
+        0.24,
+        -0.08
+      ],
+      [
+        0.92,
+        1
+      ],
+      [
+        1.39,
+        0.87
+      ],
+      [
+        1.7,
+        1.02
+      ],
+      [
+        2.12,
+        0.73
+      ],
+      [
+        2.83,
+        -0.035
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    "wipeKeys": [
+      [
+        0,
+        0
+      ],
+      [
+        0.6,
+        0.1
+      ],
+      [
+        0.98,
+        0.75
+      ],
+      [
+        1.42,
+        1
+      ],
+      [
+        1.71,
+        0.56
+      ],
+      [
+        2.15,
+        0.98
+      ],
+      [
+        2.77,
+        0
+      ]
+    ],
+    "snapKeys": [
+      [
+        0,
+        0
+      ],
+      [
+        0.3,
+        -0.22
+      ],
+      [
+        0.4,
+        1
+      ],
+      [
+        0.66,
+        0.16
+      ],
+      [
+        0.8,
+        -0.045
+      ],
+      [
+        0.92,
+        0
+      ]
+    ],
+    "gaze": [
+      [
+        0,
+        0.15
+      ],
+      [
+        0.25,
+        0.55
+      ],
+      [
+        0.7,
+        0.55
+      ],
+      [
+        1.04,
+        0.2
+      ],
+      [
+        1.3,
+        0.38
+      ],
+      [
+        1.95,
+        0.38
+      ],
+      [
+        2.6,
+        0.28
+      ],
+      [
+        3.35,
+        -0.24
+      ],
+      [
+        3.9,
+        -0.24
+      ],
+      [
+        4.18,
+        -0.49
+      ],
+      [
+        4.9,
+        -0.49
+      ],
+      [
+        5.5,
+        0.08
+      ],
+      [
+        6.22,
+        0.33
+      ],
+      [
+        6.88,
+        0.33
+      ],
+      [
+        7.2,
+        -0.08
+      ],
+      [
+        7.82,
+        -0.08
+      ],
+      [
+        8.35,
+        0.25
+      ],
+      [
+        9.45,
+        0.38
+      ],
+      [
+        10.2,
+        0.38
+      ],
+      [
+        10.52,
+        -0.31
+      ],
+      [
+        11.3,
+        -0.31
+      ],
+      [
+        12.12,
+        0.13
+      ],
+      [
+        13.16,
+        0.13
+      ],
+      [
+        13.5,
+        -0.47
+      ],
+      [
+        14.14,
+        -0.47
+      ],
+      [
+        14.45,
+        0.26
+      ],
+      [
+        15.3,
+        0.26
+      ],
+      [
+        15.55,
+        0.52
+      ],
+      [
+        16.28,
+        0.52
+      ],
+      [
+        17,
+        -0.08
+      ],
+      [
+        18,
+        -0.15
+      ],
+      [
+        19,
+        0.15
+      ],
+      [
+        20,
+        0.15
+      ]
+    ],
+    "weight": [
+      [
+        0,
+        -0.22
+      ],
+      [
+        1.36,
+        0.9
+      ],
+      [
+        3.95,
+        0.34
+      ],
+      [
+        5.3,
+        -0.85
+      ],
+      [
+        7.88,
+        -0.13
+      ],
+      [
+        9.24,
+        0.64
+      ],
+      [
+        11.83,
+        -0.34
+      ],
+      [
+        14.1,
+        -0.72
+      ],
+      [
+        16.6,
+        0.86
+      ],
+      [
+        20,
+        -0.22
+      ]
+    ],
+    "neckLag": [
+      0.15,
+      0.38
+    ],
+    "lag": [
+      0.13,
+      0.21
+    ],
+    "breathPeriod": 3.65,
+    "calm": [
+      8.62,
+      9.05,
+      13.05,
+      13.34
+    ]
+  }
+}

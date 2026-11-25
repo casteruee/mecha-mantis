@@ -1,0 +1,51 @@
+{
+  "name": "ORCHIS MX-7 · vertical 12 s · beat 1 (intro + abdomen), 0–5.2 s",
+  "product": { "name": "ORCHIS MX-7", "title": "Robotic Mantis, Taken Apart" },
+  "duration": 5.2,
+  "fps": 30,
+  "size": [1080, 1920],
+  "preview": [540, 960],
+  "stage": { "top": 420, "bottom": 1320 },
+  "blend": 0.6,
+
+  "camera": {
+    "note": "az: degrees from the hero view, + orbits toward the tail. d: multiple of the hero distance. target: mantis-local point. screenY: where the target lands on the 1080x1920 frame (0 = top). fov: vertical degrees. ease: curve of the move INTO this key. The abdomen shots use a narrower fov (22.5) so the whole mantis spans >=80% of the frame height at d 0.70 -> 0.595 (the spec'd 30% shorter + 15% push-in).",
+    "heroAzWorld": 26,
+    "heroDist": 48.5,
+    "pullback": 0.06
+  },
+  "shots": {
+    "hero":          { "az": 0,   "el": 10, "d": 1.0,   "target": [0.55, 3.3, 0.0], "screenY": 0.44, "fov": 28, "ease": "inOut" },
+    "hero_orbit":    { "az": 10,  "el": 11, "d": 0.98,  "target": [0.55, 3.3, 0.0], "screenY": 0.44, "fov": 28, "ease": "linear" },
+    "abdomen":       { "az": 110, "el": 22, "d": 0.70,  "target": [2.2, 3.2, 0.0],  "screenY": 0.43, "fov": 22.5, "ease": "inOut" },
+    "abdomen_open":  { "az": 116, "el": 23, "d": 0.595, "target": [2.4, 3.25, 0.0], "screenY": 0.43, "fov": 22.5, "ease": "inOut" },
+    "abdomen_hold":  { "az": 121, "el": 24, "d": 0.565, "target": [2.4, 3.25, 0.0], "screenY": 0.43, "fov": 22.5, "ease": "inOut" },
+    "abdomen_close": { "az": 124, "el": 24, "d": 0.58,  "target": [2.3, 3.2, 0.0],  "screenY": 0.43, "fov": 22.5, "ease": "inOut" }
+  },
+
+  "acts": [
+    { "act": "intro", "t": 0.0, "status": "Stalking in",
+      "camera": [ { "t": 0.0, "shot": "hero" }, { "t": 2.3, "shot": "hero_orbit" } ] },
+    { "act": "abdomen", "t": 2.3, "button": "abdomen", "status": "Abdomen open", "open": [2.5, 3.5], "close": [4.7, 5.2],
+      "camera": [ { "t": 2.5, "shot": "abdomen" }, { "t": 3.5, "shot": "abdomen_open" }, { "t": 4.7, "shot": "abdomen_hold" }, { "t": 5.2, "shot": "abdomen_close" } ] }
+  ],
+
+  "motion": {
+    "walk": { "speed": 0.14, "stop": [2.0, 2.6], "stepHz": 0.9, "stepLift": 0.07, "stepSwing": 0.05 },
+    "forearmLift": 0.07,
+    "gearRate": { "body": 0.6, "abd": 3.0 }
+  },
+
+  "abdomen": {
+    "note": "open/close = [start, duration] in s from the act's open/close start; part j starts stagger × rank_j later. Ranks: wings L→R; belly front→back; panes top sector first, tail bay first; bands tail first; modules in build order.",
+    "wings":   { "n": 2,  "open": [0.00, 0.40], "stagger": 0.06, "close": [0.24, 0.26], "closeStagger": 0.0,  "closeOrder": "same" },
+    "belly":   { "n": 4,  "open": [0.00, 0.24], "stagger": 0.05, "close": [0.30, 0.18], "closeStagger": 0.0,  "closeOrder": "same" },
+    "panes":   { "n": 56, "open": [0.08, 0.36], "stagger": 0.05, "wave": 0.012, "close": [0.12, 0.22], "closeStagger": 0.02, "closeWave": 0.006, "closeOrder": "same" },
+    "tail":    { "n": 1,  "open": [0.36, 0.34], "close": [0.10, 0.20] },
+    "bands":   { "n": 7,  "open": [0.42, 0.28], "stagger": 0.05, "close": [0.04, 0.14], "closeStagger": 0.015, "closeOrder": "reverse" },
+    "modules": { "n": 6,  "open": [0.66, 0.28], "stagger": 0.06, "close": [0.00, 0.10], "closeStagger": 0.01, "closeOrder": "reverse" },
+    "glow":    { "open": [0.55, 0.45], "close": [0.00, 0.25], "pulseHz": 2.2, "pulse": 0.18, "bloom": [0.38, 0.55] }
+  },
+
+  "ui": { "statusOpen": "Abdomen open · {pct}% apart" }
+}
