@@ -55,19 +55,23 @@ node tools/lifepreview.mjs <输出目录> hero 8 0 30
 ```
 
 - 渲染脚本默认用 `C:/Program Files/Google/Chrome/Application/chrome.exe`，其它路径请设环境变量 `CHROME_PATH`。
+- `render.mjs` / `lifepreview.mjs` 把帧写到 `<输出目录>/frames/`，mp4 写成 `<输出目录>/ORCHIS-MX7_v11_Full.mp4`（编码调用 `python tools/preview_encode.py`，需要 PyAV + Pillow，且 `ffmpeg` 在 PATH 上）。
 - 页面按 `../node_modules/three/...` 解析 `three` 与 `three/addons/`，所以必须先 `npm ci`、并从仓库根目录起服务。
 - 想要 GPU 而不是 SwiftShader，需要 `--use-angle=d3d11`（脚本里已带）和一块能跑 WebGL2 的显卡。
 
 ## 已验证 / 未验证
 
-已验证：
+已验证（2026-11-25，发布时实跑）：
+- 干净目录 `npm ci`：86 个包，1 分 34 秒，无报错。
+- `node tools/render.mjs out hero 1.5 0 24`：无头 Chrome 出 36 帧并编码成 mp4，33 秒完成；渲染帧经目视核对为正常画面（非黑屏、无脚本报错）。
 - 成片 `media/ORCHIS-MX7_v11.mp4`：ffprobe 实测 1080×1920、30 fps、1038 帧、34.6 s、H.264 带音轨。
 - 封面帧取自成片 t=3.2 s。
 - 仓库内所有页面与脚本引用的相对路径都已按文件存在性核对。
 
-未验证（本次发布未重跑）：
-- 未在新环境重跑 `npm ci` → 渲染全流程，因此"clone 下来一条命令可用"未做端到端确认。
+未验证：
+- 未重跑 `film/landscape.json` 驱动的整片（30 s / 1038 帧）渲染，只验证了同一管线的短片路径。
 - 参考图未随仓库发布，逐条对照类工具（`tools/fitcam.py`、`tools/measure.py` 与 `compare_*.png` 对照图）无法直接复现，只能复现渲染本身。
+- `tools/encode-r8.mjs`、`tools/review-r8.mjs`、`tools/capture.mjs` 等历史工具默认读写 `rounds/…` 目录布局，仓库不含该目录，需自行改路径。
 
 ## 方法来源与致谢
 

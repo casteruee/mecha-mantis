@@ -18,7 +18,7 @@ const server = http.createServer((req, res) => {
   const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
   if (pathname === '/favicon.ico') { res.writeHead(204); return res.end(); }
   const deps = pathname.startsWith('/node_modules/');
-  const base = deps ? path.resolve(root, '../../../node_modules') : root;
+  const base = deps ? path.resolve(root, 'node_modules') : root;
   const p = path.resolve(base, '.' + (deps ? pathname.slice('/node_modules'.length) : pathname));
   if (path.relative(base,p).startsWith('..') || !fs.existsSync(p) || !fs.statSync(p).isFile()) {
     res.writeHead(404); return res.end();
@@ -42,7 +42,8 @@ try {
     await (await page.$('canvas')).screenshot({ type:'jpeg',quality:96,path: path.join(frames, `f${String(f+Math.round(T0*FPS)).padStart(4, '0')}.jpg`) });
     if (f % 24 === 0) console.log(`frame ${f}/${n}  ${((Date.now() - t0ms) / 1000).toFixed(1)} s`);
   }
-  const mp4 = path.join(outDir, `life_${shot}_${SECS}s_${FPS}fps.mp4`);
-  if(T0===0) execFileSync('python',[path.join(root,'tools/preview_encode.py'),frames,String(FPS),path.resolve(outDir,'../ORCHIS-MX7_v11_Full.mp4')],{stdio:'inherit'});
-  console.log('wrote', mp4);
+  const dest = T0 === 0 ? path.resolve(outDir, 'ORCHIS-MX7_v11_Full.mp4') : null;
+  if (dest) execFileSync('python', [path.join(root, 'tools/preview_encode.py'), frames, String(FPS), dest], { stdio: 'inherit' });
+  console.log('frames:', frames);
+  console.log(dest ? 'wrote ' + dest : 'no mp4 (T0 !== 0): frames only');
 } finally { await browser.close(); server.close(); }
